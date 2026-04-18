@@ -129,6 +129,13 @@ export default function CookingCalculator() {
               <button onClick={() => adjustTime(-5)} className="flex-1 py-3 rounded-xl border" style={{ borderColor: "rgba(255,255,255,0.1)" }}><Minus size={20} /></button>
               <button onClick={() => adjustTime(5)} className="flex-1 py-3 rounded-xl border" style={{ borderColor: "rgba(255,255,255,0.1)" }}><Plus size={20} /></button>
             </div>
+            <div className="grid grid-cols-5 gap-1">
+              {[5, 10, 15, 20, 25, 30, 40, 45, 60, 90].map(t => (
+                <button key={t} onClick={() => setOvenTime(t)} className="py-2 rounded-lg text-sm font-mono border transition-all" style={ovenTime === t ? { backgroundColor: settings.accent, borderColor: settings.accent } : { borderColor: "rgba(255,255,255,0.1)" }}>
+                  {t}m
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Result */}
@@ -154,7 +161,7 @@ export default function CookingCalculator() {
       </main>
 
       {showNav && (
-        <nav className="fixed left-2 right-2 z-20 flex items-center rounded-xl border portrait:bottom-24 landscape:bottom-6" style={{ backgroundColor: "rgba(8,8,8,0.98)", borderColor: "rgba(255,255,255,0.05)" }}>
+        <nav className="fixed left-2 right-2 z-20 flex items-center rounded-xl border" style={{ backgroundColor: "rgba(8,8,8,0.98)", borderColor: "rgba(255,255,255,0.05)", bottom: "5rem" }}>
           <button className="flex-1 flex flex-col items-center gap-1 py-3 rounded-xl" style={{ color: settings.accent }}>
             <Flame size={20} />
             <span className="text-[10px] font-medium">Airfryer</span>
