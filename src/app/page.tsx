@@ -296,7 +296,7 @@ export default function CookingCalculator() {
       </main>
 
       {showNav && (
-        <nav className="fixed left-2 right-2 z-20 flex items-center rounded-xl border" style={{ backgroundColor: "rgba(8,8,8,0.98)", borderColor: "rgba(255,255,255,0.05)", bottom: "5rem" }}>
+        <nav className="portrait:bottom-24 landscape:bottom-6 fixed left-2 right-2 z-20 flex items-center rounded-xl border" style={{ backgroundColor: "rgba(8,8,8,0.98)", borderColor: "rgba(255,255,255,0.05)" }}>
           <button className="flex-1 flex flex-col items-center gap-1 py-3 rounded-xl" style={{ color: settings.accent }}>
             <Flame size={20} />
             <span className="text-[10px] font-medium">Airfryer</span>
